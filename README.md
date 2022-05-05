@@ -7,8 +7,7 @@ Useful if you need a list of all the IP addresses included in various ranges or 
 #### USAGE:
 ```./cidrata.sh list.txt output.txt```
 
-> **Required argument:** input file name
->
+> **Required argument:** input file name  
 > **Optional argument:** output file name
 
 The list can include a mixture of IP/Ranges.
