@@ -5,7 +5,7 @@ This tool creates a list of ordered IP addresses from a list of mixed ranges.
 Useful if you need a list of all the IP addresses included in various ranges or to calculate the total number.
 
 #### USAGE:
-```./cidrata.sh list.txt output.txt```
+```./cidrolver.sh list.txt output.txt```
 
 > **Required argument:** input file name  
 > **Optional argument:** output file name
