@@ -23,7 +23,9 @@ if [ -z "$filei" ]
 		echo "This tool creates a list of ordered IP addresses from a list of mixed ranges."
 		echo "WHY? Useful if you need a list of all the IP addresses included in various ranges."
 		echo
-		echo "USAGE: ./cidrata.sh list.txt output.txt"
+		echo "USAGE: ./cidrolver.sh list.txt output.txt"
+		echo
+                echo "(Output file path is optional)"
 		echo
 		echo "The list can include a mixture of IP/Ranges such as:"
 		echo " - 10.0.0.1"
@@ -79,19 +81,14 @@ for ip in $(cat $filei); do
 done
 
 # Formatting entries
-# Replace SPACE with \n
-
+# Replace , with \n
+# Remove spaces 
 echo "* Creating temporary files.."
 
-cat $filei > list.tmp
+cat $filei | tr "," "\\n" | tr -d " " > list.tmp
 
 echo "* Formatting entries.."
 sed -e 's/\s\+/\n/g' list.tmp > $output
-
-# Remove , 
-
-cat $output > list.tmp
-sed -e 's/,//g' list.tmp > $output
 
 echo "* Resolving ranges.."
 # Check for CIDR Ranges
