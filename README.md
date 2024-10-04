@@ -17,5 +17,3 @@ Accepted types/format:
 - 10.0.0.1-255
 - 10.0.0.1-10.0.0.255
 
-# ISSUES:
-- Currently misses first IP address of ranges like: 10.0.0.1-10.0.0.3 (only prints 10.0.0.2, 10.0.0.3)
